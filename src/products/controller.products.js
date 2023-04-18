@@ -1,10 +1,7 @@
 const { Router } = require("express");
 const Products = require("../model/Products.model");
-const paginationMiddleware = require("../dao/paginationMiddleware");
 
 const router = Router();
-
-router.use(paginationMiddleware);
 
 router.get("/", async (req, res) => {
   try {
