@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-
+const Product = require("./Products.model");
 const collectionName = "cart";
 
 const userSchema = new mongoose.Schema({
@@ -12,7 +12,11 @@ const userSchema = new mongoose.Schema({
       {
         product: {
           type: mongoose.Schema.Types.ObjectId,
-          ref: "product",
+          ref: Product,
+        },
+        quantity: {
+          type: Number,
+          default: 1,
         },
       },
     ],
